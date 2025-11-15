@@ -206,11 +206,7 @@ subprojects {
           packaging = "jar"
           description.set(projectDesc)
           afterEvaluate {
-            artifactId =
-              tasks.jar
-                .get()
-                .archiveBaseName
-                .get()
+            artifactId = tasks.jar.get().archiveBaseName.get()
           }
 
           from(components["kotlin"])

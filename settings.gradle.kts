@@ -1,8 +1,8 @@
 pluginManagement {
-  repositories {
-    gradlePluginPortal()
-    mavenCentral()
-  }
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
 }
 
 include(
@@ -32,5 +32,5 @@ include(
   "textratypist",
   "tiled",
   "vis",
-  "vis-style",
+  "vis-style"
 )
