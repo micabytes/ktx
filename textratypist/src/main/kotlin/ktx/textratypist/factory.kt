@@ -7,11 +7,10 @@ import ktx.scene2d.KWidget
 import ktx.scene2d.Scene2DSkin
 import ktx.scene2d.Scene2dDsl
 import ktx.scene2d.actor
+import ktx.scene2d.scene2d
 import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
-
-const val DEFAULT_STYLE = "default"
 
 /**
  * @param text will be displayed on the label.
@@ -26,7 +25,7 @@ const val DEFAULT_STYLE = "default"
 @OptIn(ExperimentalContracts::class)
 inline fun <S> KWidget<S>.textraLabel(
   text: String,
-  style: String = DEFAULT_STYLE,
+  style: String = ktx.scene2d.defaultStyle,
   skin: Skin = Scene2DSkin.defaultSkin,
   init: (@Scene2dDsl TextraLabel).(S) -> Unit = {},
 ): TextraLabel {
@@ -47,7 +46,7 @@ inline fun <S> KWidget<S>.textraLabel(
 @OptIn(ExperimentalContracts::class)
 inline fun <S> KWidget<S>.typingLabel(
   text: String,
-  style: String = DEFAULT_STYLE,
+  style: String = ktx.scene2d.defaultStyle,
   skin: Skin = Scene2DSkin.defaultSkin,
   init: (@Scene2dDsl TypingLabel).(S) -> Unit = {},
 ): TypingLabel {

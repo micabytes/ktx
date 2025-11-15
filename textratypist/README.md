@@ -29,8 +29,8 @@ Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("my-skin.json"))
 
 ## Available Builders
 
-| Widget | DSL Method                       | Description                                      |
-|-------|----------------------------------|--------------------------------------------------|
+| Widget        | DSL Method                       | Description                                      |
+|---------------|----------------------------------|--------------------------------------------------|
 | `TextraLabel` | `textraLabel(text, skin, style)` | Plain labels with effects and styles             |
 | `TypingLabel` | `typingLabel(text, skin, style)` | Labels with typing animation, effects and styles |
 
@@ -40,18 +40,18 @@ Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("my-skin.json"))
 
 ```kotlin
 scene2d.table {
-  typingLabel("Welcome to [RED]KTX Textratypist[]!") {
-    textSpeed = 0.5F
-  }
+    typingLabel("Welcome to [RED]KTX Textratypist[]!") {
+        textSpeed = 0.5F
+    }
 }
 ```
 
 ### Using TextraTypist Markup Tags
 
-| Effect | Example Usage            |
-|-------|--------------------------|
-| Color | `[RED]Danger![]`         |
-| Wave Motion | `{WAVE}Ocean text[]`     |
+| Effect             | Example Usage            |
+|--------------------|--------------------------|
+| Color              | `[RED]Danger![]`         |
+| Wave Motion        | `{WAVE}Ocean text[]`     |
 | Slow / Fast typing | `{SLOW}`, `{FAST}`, etc- |
 
 ```kotlin
@@ -60,7 +60,15 @@ typingLabel("{WAVE}System reboot[] in [YELLOW]{SLOWER}3... 2... 1...[]")
 
 ### Synergy
 
-| Library | Purpose |
-|--------|---------|
-| `ktx-scene2d` | Layout + widget DSL |
-| `ktx-actors` | Stage helpers & utilities |
+| Library       | Purpose                   |
+|---------------|---------------------------|
+| `ktx-scene2d` | Layout + widget DSL       |
+| `ktx-actors`  | Stage helpers & utilities |
+
+### Alternatives:
+
+| Library                                                   | Purpose                                                                    |
+|-----------------------------------------------------------|----------------------------------------------------------------------------|
+| [`typing-label`](https://github.com/rafaskb/typing-label) | Provides a LibGdx typing label. TextraTypist is/was based on this library- |
+
+

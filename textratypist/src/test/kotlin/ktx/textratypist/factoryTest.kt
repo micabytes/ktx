@@ -1,14 +1,36 @@
 package ktx.textratypist
 
+import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.utils.Align
+import com.github.tommyettinger.textra.FWSkin
 import com.github.tommyettinger.textra.TextraLabel
 import com.github.tommyettinger.textra.TypingLabel
-import ktx.scene2d.*
-import org.junit.Assert.*
+import ktx.scene2d.ApplicationTest
+import ktx.scene2d.KWidget
+import ktx.scene2d.Scene2DSkin
+import ktx.scene2d.scene2d
+import ktx.scene2d.stack
+import ktx.scene2d.table
+import ktx.scene2d.tree
+import org.junit.After
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Test
 
 class BaseFactoryTest : ApplicationTest() {
+  @Before
+  fun `setup FWSkin`() {
+    Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("test-skin.json"))
+  }
+
+  @After
+  fun `cleanup FWSkin`() {
+    Scene2DSkin.defaultSkin.dispose()
+  }
+
   private fun <T : Actor> test(
     validate: (T) -> Unit = {},
     widget: KWidget<*>.() -> T?,
@@ -60,12 +82,21 @@ class BaseFactoryTest : ApplicationTest() {
         assertEquals(Align.bottom, it.alignment)
       },
     )
-
 }
 
 class InlinedFactoryTest : ApplicationTest() {
+  @Before
+  fun `setup FWSkin`() {
+    Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("test-skin.json"))
+  }
+
+  @After
+  fun `cleanup FWSkin`() {
+    Scene2DSkin.defaultSkin.dispose()
+  }
+
   /**
-   * Tests that textraLabel and typinglabel work within the generic [KWidget] API
+   * Tests that textraLabel and typingLabel work within the generic [KWidget] API
    */
   @Test
   fun `textraLabel within a stack`() {
