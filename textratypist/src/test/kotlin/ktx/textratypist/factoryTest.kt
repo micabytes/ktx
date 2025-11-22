@@ -22,12 +22,14 @@ import org.junit.Test
 
 class BaseFactoryTest : ApplicationTest() {
   @Before
-  fun `setup FWSkin`() {
+  fun `setup textratypist compatible skin`() {
+    // TextraTypist requires a skin with textra label styles defined. This requires loading a skin with either
+    // FWSkin or FreeTypist.
     Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("test-skin.json"))
   }
 
   @After
-  fun `cleanup FWSkin`() {
+  fun `cleanup textratypist skins`() {
     Scene2DSkin.defaultSkin.dispose()
   }
 
@@ -86,12 +88,12 @@ class BaseFactoryTest : ApplicationTest() {
 
 class InlinedFactoryTest : ApplicationTest() {
   @Before
-  fun `setup FWSkin`() {
+  fun `setup textratypist compatible skin`() {
     Scene2DSkin.defaultSkin = FWSkin(Gdx.files.internal("test-skin.json"))
   }
 
   @After
-  fun `cleanup FWSkin`() {
+  fun `cleanup textratypist skins`() {
     Scene2DSkin.defaultSkin.dispose()
   }
 
